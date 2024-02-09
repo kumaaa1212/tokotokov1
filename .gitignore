@@ -2,6 +2,7 @@
 /dist
 /dt
 /node_modules
+/db
 
 .env
 .env.local
