@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     restart: always
     ports:
-      - 3000:300
+      - 3000:3000
     tty: true
     volumes:
       - type: bind
@@ -15,14 +15,15 @@ services:
     depends_on:
       - db
   db:
-    image: mysql:8.0
+    image: postgres:14.4-alpine
     restart: always
     ports:
-      - 3306:3306
+      - 5434:5432
     environment:
-      MYSQL_DATABASE: sample
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      POSTGRES_USER: kuma
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: kumadb
     volumes:
-      - ./db/data:/var/lib/mysql
+      - ./db/data:/var/lib/postgresql/data
+networks:
+  lesson:
