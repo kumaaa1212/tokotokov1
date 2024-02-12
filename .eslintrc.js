@@ -16,7 +16,7 @@ module.exports = {
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        moduleDirectory: ['node_modules', 'src'],
+        moduleDirectory: ['node_modules', 'src/'],
       },
       // リゾルバは、ESLint が import 文で参照されるモジュールを見つけるために使用するツールです。リゾルバは、モジュールの名前とパスをマッピングし、ESLint が必要なモジュールを見つけられるようにします。
     },
